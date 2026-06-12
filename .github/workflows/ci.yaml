@@ -29,4 +29,4 @@ jobs:
         run: dart analyze --fatal-infos --fatal-warnings
 
       - name: Smoke test (remote)
-        run: dart run bin/pub_score_checker.dart check_pub_score remote --package-name meta --threshold 0
+        run: dart run bin/pub_score_checker.dart check_pub_score remote --package-name meta --threshold 10
