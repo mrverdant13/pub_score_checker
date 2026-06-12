@@ -1,6 +1,6 @@
 name: pub_score_checker
 description: Evaluate the health and quality of a Dart package.
-version: 0.1.0+1
+version: 0.0.1-dev.1
 publish_to: none
 
 environment:
