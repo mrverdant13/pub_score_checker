@@ -17,6 +17,7 @@ class PubScoreCheckerCommandRunner extends CommandRunner<int> {
 class CheckPubScoreCommand extends Command<int> {
   CheckPubScoreCommand() {
     addSubcommand(LocalCommand());
+    addSubcommand(RemoteCommand());
   }
 
   @override
@@ -139,5 +140,31 @@ class LocalCommand extends PubScoreCheckerCommand {
   Future<Summary> analyze(PackageAnalyzer analyzer) {
     final packagePath = argResults![_packagePathOption] as String;
     return analyzer.inspectDir(packagePath);
+  }
+}
+
+class RemoteCommand extends PubScoreCheckerCommand {
+  RemoteCommand() {
+    argParser.addOption(
+      _packageNameOption,
+      abbr: 'n',
+      help: 'Name of the package on pub.dev.',
+      mandatory: true,
+    );
+  }
+
+  static const _packageNameOption = 'package-name';
+
+  @override
+  String get name => 'remote';
+
+  @override
+  String get description =>
+      'Check the pub score of a published Dart package by name.';
+
+  @override
+  Future<Summary> analyze(PackageAnalyzer analyzer) {
+    final packageName = argResults![_packageNameOption] as String;
+    return analyzer.inspectPackage(packageName);
   }
 }
