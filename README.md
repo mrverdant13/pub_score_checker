@@ -4,6 +4,14 @@ A Dart CLI that runs [`pana`](https://pub.dev/packages/pana) against a local or 
 
 ## Installation
 
+Replace `v1.0.0` with the desired [release tag](https://github.com/mrverdant13/pub_score_checker/releases):
+
+```sh
+dart install https://github.com/mrverdant13/pub_score_checker.git --git-ref v1.0.0
+```
+
+Omit `--git-ref` to install from the latest commit on the default branch:
+
 ```sh
 dart install https://github.com/mrverdant13/pub_score_checker.git
 ```
@@ -11,7 +19,7 @@ dart install https://github.com/mrverdant13/pub_score_checker.git
 Alternatively, using `dart pub global activate`:
 
 ```sh
-dart pub global activate --source git https://github.com/mrverdant13/pub_score_checker
+dart pub global activate --source git https://github.com/mrverdant13/pub_score_checker --git-ref v1.0.0
 ```
 
 ## Usage
