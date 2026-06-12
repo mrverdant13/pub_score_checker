@@ -54,8 +54,7 @@ abstract class PubScoreCheckerCommand extends Command<int> {
 
   int get _threshold => int.parse(argResults![_thresholdOption] as String);
 
-  String? get _markdownOutput =>
-      argResults![_markdownOutputOption] as String?;
+  String? get _markdownOutput => argResults![_markdownOutputOption] as String?;
 
   Future<Summary> analyze(PackageAnalyzer analyzer);
 
@@ -81,7 +80,8 @@ abstract class PubScoreCheckerCommand extends Command<int> {
     final maxPoints = report.maxPoints;
     final missingPoints = maxPoints - grantedPoints;
 
-    stdout.writeln('Score: $grantedPoints/$maxPoints (missing: $missingPoints)');
+    stdout
+        .writeln('Score: $grantedPoints/$maxPoints (missing: $missingPoints)');
 
     final mdOutputPath = _markdownOutput;
     if (mdOutputPath != null) {
