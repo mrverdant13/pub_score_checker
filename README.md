@@ -4,7 +4,11 @@ A Dart CLI that runs [`pana`](https://pub.dev/packages/pana) against a local or 
 
 ## Installation
 
-Activate directly from GitHub:
+```sh
+dart install https://github.com/mrverdant13/pub_score_checker.git
+```
+
+Alternatively, using `dart pub global activate`:
 
 ```sh
 dart pub global activate --source git https://github.com/mrverdant13/pub_score_checker
